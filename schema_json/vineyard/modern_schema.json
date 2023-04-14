@@ -1,0 +1,110 @@
+{
+  "partition_strategy": {
+    "topology": "GPS_EDGE_CUT",
+    "property": {
+      "by_entity": {
+        "vertex_property_partition_strategy": "PPS_MASTER",
+        "edge_property_partition_strategy": "PPS_MASTER_MIRROR"
+      }
+    }
+  },
+  "vertex_types": [
+    {
+      "id": 1,
+      "name": "software",
+      "properties": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": 4
+        },
+        {
+          "id": 1,
+          "name": "name",
+          "type": 7
+        },
+        {
+          "id": 2,
+          "name": "lang",
+          "type": 7
+        }
+      ],
+      "primary_keys": [
+        "id"
+      ],
+      "total_num": 0
+    },
+    {
+      "id": 0,
+      "name": "person",
+      "properties": [
+        {
+          "id": 0,
+          "name": "id",
+          "type": 4
+        },
+        {
+          "id": 1,
+          "name": "name",
+          "type": 7
+        },
+        {
+          "id": 2,
+          "name": "age",
+          "type": 2
+        }
+      ],
+      "primary_keys": [
+        "id"
+      ],
+      "total_num": 0
+    }
+  ],
+  "edge_types": [
+    {
+      "id": 0,
+      "name": "knows",
+      "src_dst_pairs": [
+        {
+          "src_type": "person",
+          "dst_type": "person",
+          "relation": "MANY_TO_MANY"
+        }
+      ],
+      "properties": [
+        {
+          "id": 0,
+          "name": "weight",
+          "type": 6
+        }
+      ],
+      "primary_keys": [],
+      "total_num": 0
+    },
+    {
+      "id": 1,
+      "name": "created",
+      "src_dst_pairs": [
+        {
+          "src_type": "person",
+          "dst_type": "software",
+          "relation": "MANY_TO_MANY"
+        }
+      ],
+      "properties": [
+        {
+          "id": 0,
+          "name": "weight",
+          "type": 6
+        }
+      ],
+      "primary_keys": [],
+      "total_num": 0
+    }
+  ],
+  "statistics": {
+    "num_partitions": 0,
+    "num_vertices": 0,
+    "num_edges": 0
+  }
+}
